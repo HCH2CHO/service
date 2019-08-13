@@ -17,8 +17,9 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setblocking(0)
 
 # 绑定套接字到端口
+# ip在云服务器中运行时为''
 port = 8002
-ip = "127.0.0.1"
+ip = ""
 
 server_address = (ip, port)
 server.bind(server_address)
@@ -36,13 +37,13 @@ abnormal_msg=[]
 #速度档位,0为停止,1为慢速,2为中速,3为快速
 speed='1'
 #加载点数据
-file_data=open('Route5.txt','r',encoding='utf-8')
+file_data=open('route0813.csv','r',encoding='utf-8')
 point_data=[]
 point_count=0
 line=file_data.readline()
 while line:
     line_list=line.strip().split(',')
-    if(line_list[1]=='1'):
+    if(line_list[1]=='2'):
         #json数据字符串化
         point_data.append(json.dumps({"x":line_list[2],"y":line_list[3]})+'*' )
     line=file_data.readline()

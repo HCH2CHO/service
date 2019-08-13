@@ -9,9 +9,9 @@ from socket import *
 import json
 import time
 
-address='127.0.0.1'   #服务器的ip地址，在云服务器中运行时为''
+address='127.0.0.1'   #服务器的ip地址
 #address='193.112.96.116'
-#address='192.168.0.59'
+
 port=8002       #服务器的端口号
 #port = 12580
 buffsize=1024        #接收数据的缓存大小
