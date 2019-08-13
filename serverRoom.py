@@ -43,7 +43,8 @@ point_count=0
 line=file_data.readline()
 while line:
     line_list=line.strip().split(',')
-    if(line_list[1]=='2'):
+    #if(line_list[1]=='2'):
+    if(len(line_list)==4):
         #json数据字符串化
         point_data.append(json.dumps({"x":line_list[2],"y":line_list[3]})+'*' )
     line=file_data.readline()
@@ -124,7 +125,7 @@ while bool_continue:
         else:
             #print('sending {!r} to {}'.format(next_msg,s.getpeername()),file=sys.stderr)
             #s.send(next_msg.encode())
-            time.sleep(0.5)
+            time.sleep(0.1)
             
     # 处理 「异常状况」
     '''
