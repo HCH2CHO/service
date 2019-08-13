@@ -46,7 +46,7 @@ while line:
     #if(line_list[1]=='2'):
     if(len(line_list)==4):
         #json数据字符串化
-        point_data.append(json.dumps({"x":line_list[2],"y":line_list[3]})+'*' )
+        point_data.append(json.dumps({"x":line_list[1],"y":line_list[2]})+'*' )
     line=file_data.readline()
 
 
