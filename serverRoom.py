@@ -92,7 +92,8 @@ while bool_continue:
                         print('wrong type')
                 else:
                     print('wrong input')
-            except Exception:
+            except Exception as e:
+                print(e)
                 inputs.remove(s)
 				
                 # 一个有数据的可读客户端

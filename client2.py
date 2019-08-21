@@ -9,10 +9,10 @@ from socket import *
 import json
 import time
 
-address='127.0.0.1'   #服务器的ip地址
-#address='193.112.96.116'
+#address='127.0.0.1'   #服务器的ip地址
+address='193.112.96.116'
 
-#port=8080       #服务器的端口号
+
 port = 8002
 buffsize=1024        #接收数据的缓存大小
 #s=socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)
