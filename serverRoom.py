@@ -125,8 +125,8 @@ while bool_continue:
             speed_msg='{"type":"speed","data":'+str(int(speed*3.6))+'}*'
             point_count=point_count+int(speed)
             #位置信息、速度信息            
-            #s.send(position_msg.encode())
-            #s.send(speed_msg.encode())
+            s.send(position_msg.encode())
+            s.send(speed_msg.encode())
             #报警信息、红绿灯信息
             if(alarm != 0):
                 if alarm>0 and alarm <5:
