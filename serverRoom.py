@@ -95,7 +95,6 @@ while bool_continue:
             except Exception as e:
                 print(e)
                 inputs.remove(s)
-                outputs.remove(s)
 				
                 # 一个有数据的可读客户端
                 #print('  received {!r} from {}'.format(data, s.getpeername()), file=sys.stderr,)
@@ -126,8 +125,8 @@ while bool_continue:
             speed_msg='{"type":"speed","data":'+str(int(speed*3.6))+'}*'
             point_count=point_count+int(speed)
             #位置信息、速度信息            
-            s.send(position_msg.encode())
-            s.send(speed_msg.encode())
+            #s.send(position_msg.encode())
+            #s.send(speed_msg.encode())
             #报警信息、红绿灯信息
             if(alarm != 0):
                 if alarm>0 and alarm <5:
@@ -148,7 +147,7 @@ while bool_continue:
         except Exception as e:
             # 没有消息在等待，我们要关闭掉。
             #print('  ', s.getpeername(), 'queue empty',file=sys.stderr)
-            inputs.remove(s)
+            #inputs.remove(s)
             outputs.remove(s)
             print(e)
             print('connection close')
