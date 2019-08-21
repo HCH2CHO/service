@@ -95,6 +95,7 @@ while bool_continue:
             except Exception as e:
                 print(e)
                 inputs.remove(s)
+                outputs.remove(s)
 				
                 # 一个有数据的可读客户端
                 #print('  received {!r} from {}'.format(data, s.getpeername()), file=sys.stderr,)
@@ -147,6 +148,7 @@ while bool_continue:
         except Exception as e:
             # 没有消息在等待，我们要关闭掉。
             #print('  ', s.getpeername(), 'queue empty',file=sys.stderr)
+            inputs.remove(s)
             outputs.remove(s)
             print(e)
             print('connection close')
