@@ -29,7 +29,7 @@ while True:
     
     #s.send()
     #recvdata=s.recv(buffsize).decode('utf-8')
-    recvdata=s.recv(buffsize).decode('utf-8')
-    print(recvdata)
+    #recvdata=s.recv(buffsize).decode('utf-8')
+    #print(recvdata)
     #time.sleep(0.1)
 s.close()
