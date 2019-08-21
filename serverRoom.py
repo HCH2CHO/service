@@ -126,8 +126,8 @@ while bool_continue:
             speed_msg='{"type":"speed","data":'+str(int(speed*3.6))+'}*'
             point_count=point_count+int(speed)
             #位置信息、速度信息            
-            #s.send(position_msg.encode())
-            #s.send(speed_msg.encode())
+            s.send(position_msg.encode())
+            s.send(speed_msg.encode())
             #报警信息、红绿灯信息
             if(alarm != 0):
                 if alarm>0 and alarm <5:
@@ -139,7 +139,7 @@ while bool_continue:
                 if light==1:
                     light_msg='{"type":"light","data":{"left":"red","front":"red","right":"green","mill":"5"}}*'
                 if light==2:
-                    light_msg='{"type":"light","data":{"left":"green","front":"green","right":"green","mill":'+str(int(light_count/10))+'}}*'
+                    light_msg='{"type":"light","data":{"left":"green","front":"green","right":"green","mill":'+str(int(light_count/10+1))+'}}*'
                 #红绿灯倒计时
                 light_count=light_count-1
                 s.send(light_msg.encode())
